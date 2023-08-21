@@ -25,14 +25,6 @@ const loading = ref(false)
 const email = ref('')
 
 const handleLogin = async () => {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-  provider: 'google',
-  options: {
-    queryParams: {
-      access_type: 'offline',
-      prompt: 'consent',
-    },
-  },
-})
+    const session = await supabase.auth.signInWithOAuth({provider: 'google'})
 }
 </script>
